@@ -47,42 +47,79 @@ def imprimir():
         i=0
         for i in range(5):
             if año == cerdo[i]:
-                label_imagen.config(text="cerdo")
-                          
+                cer=Image.open("cerdo.jpg")
+                imc=ImageTk.PhotoImage(cer)
+                label_imagen.config(image=imc)
+                label_imagen.image=imc             
+            
             if año ==rata[i]:
-                label_imagen.config(text="rata")
-                
+                rat=Image.open("rata.jpg")
+                imr=ImageTk.PhotoImage(rat)
+                label_imagen.config(image=imr)
+                label_imagen.image=imr   
+            
             if año == buey[i]:
-                label_imagen.config(text="buey")
+                bue=Image.open("buey.jpg")
+                imb=ImageTk.PhotoImage(bue)
+                label_imagen.config(image=imb)
+                label_imagen.image=imb
             
             if año == tigre[i]:
-                label_imagen.config(text="tigre")
+                tig=Image.open("tigre.jpg")
+                imt=ImageTk.PhotoImage(tig)
+                label_imagen.config(image=imt)
+                label_imagen.image=imt
             
             if año == conejo[i]:
-                label_imagen.config(text="conejo")
+                con=Image.open("conejo.jpg")
+                imco=ImageTk.PhotoImage(con)
+                label_imagen.config(image=imco)
+                label_imagen.image(imco)
         
             if año == dragon[i]:
-                label_imagen.config(text="dragon")
+                dra=Image.open("dragon.jpg")
+                imd=ImageTk.PhotoImage(dra)
+                label_imagen.config(image=imd)
+                label_imagen.image=imd
             
             if año == serpiente[i]:
-                label_imagen.config(text="serpiente")
+                ser=Image.open("serpiente.jpg")
+                ims=ImageTk.PhotoImage(ser)
+                label_imagen.config(image=ims)
+                label_imagen.image=ims
 
             if año ==caballo[i]:
-                label_imagen.config(text="caballo")
+                cab=Image.open("caballo.jpg")
+                imca=ImageTk.PhotoImage(cab)
+                label_imagen.config(image=imca)
+                label_imagen.image=imca
             
             if año == cabra[i]:
-                label_imagen.config(text="cabra")
+                cabr=Image.open("cabra.jpg")
+                imcab=ImageTk.PhotoImage(cabr)
+                label_imagen.config(image=imcab)
+                label_imagen.image=imca
                 
             if año == mono[i]:
-                label_imagen.config(text="mono")
+                mono=Image.open("mono.jpg")
+                imm =ImageTk.PhotoImage(mono)
+                label_imagen.config(image=imm)
+                label_imagen.image=imm
                 
             if año == gallo[i]:
-                label_imagen.config(text="gallo")
+                gal=Image.open("gallo.jpg")
+                img=ImageTk.PhotoImage(gal)
+                label_imagen.config(image=img)
+                label_imagen.image=img
                 
             if año == perro[i]:
-                label_imagen.config(text="perro")
-            else:
-                messagebox.showerror("Error","Año invalido")
+                per=Image.open("perro.jpg")
+                imp=ImageTk.PhotoImage(per)
+                label_imagen.config(image=imp)
+                label_imagen.image=imp
+         
+        if año < 1959 or año > 2018:
+            messagebox.showerror("Error","Año invalido")
                  
             
             

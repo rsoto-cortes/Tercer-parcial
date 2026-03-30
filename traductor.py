@@ -11,19 +11,33 @@ def cargar_diccionario():
     except:
         pass
     return palabras_traducidas
-    
 
-def agregar_palabra():
-    español=entrada_es.get()
-    ingles=entrada_in.get()
-    nueva_tr={"trad_español":español,"trad_ingl":ingles}
-    try:
-        with open("traductor.txt","a") as archivo:
-            palabras_traducidas.append(nueva_tr)
-            archivo.write("\n"+palabras_traducidas)
-        messagebox.showinfo("Exito","Se agrero con exito")
-    except:
-        messagebox.showerror("Error","No se pudo agregar la traduccion")
+def guardar_palabra(esp,ing):
+    with open("traductor.txt","a") as f:
+        f.write(f"{esp},{ing}\n")
+
+def agregar():
+    esp= entrada_es.get().lower()
+    ing=entrada_in.get().lower()
+    
+    if esp == "" or ing == "":
+        messagebox.showerror("Error","Campos vacios")
+        return
+    
+    guardar_palabra(esp,ing)
+    messagebox.showinfo("Exito","Palabra agregada")
+   
+def traducir():
+    palabra=entrada_palabra.get().lower()
+    dic=cargar_diccionario()
+    
+    if num.get()==1:  #español -> ingles
+        resultado=dic.get(palabra, "No encontrada")
+    else:
+        inv_dic={v:k for k,v in dic.items()}
+        resultado=inv_dic.get(palabra,"No encontrada")
+    label_traduccion.config(text=resultado)
+
 
 
 def traducir():
@@ -76,7 +90,7 @@ label_ing.place(x=40,y=330)
 entrada_in=tk.Entry(ventana,width=20)
 entrada_in.place(x=100,y=330)
 
-btn_agregar=tk.Button(ventana,text="Agregar",command=agregar_palabra)
+btn_agregar=tk.Button(ventana,text="Agregar",command=agregar)
 btn_agregar.place(x=120,y=370)
             
 
