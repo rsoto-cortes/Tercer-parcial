@@ -1,0 +1,22 @@
+Cliente: rthjk
+Dirección: dfghj
+Teléfono: 456789
+Pizzas:
+  - Grande, Champiñones, Num:2, Subtotal:$260
+TOTAL: $260
+====================================
+Cliente: rtyu
+Dirección: ghjk
+Teléfono: 567890
+Pizzas:
+  - Mediana, Jamón,Piña, Num:3, Subtotal:$300
+TOTAL: $300
+========================================
+Cliente: juan
+Dirección: perez
+Teléfono: 1234567
+Pizzas:
+  - Chica, , Num:1, Subtotal:$40
+  - Chica, Piña, Num:1, Subtotal:$50
+TOTAL: $90
+========================================

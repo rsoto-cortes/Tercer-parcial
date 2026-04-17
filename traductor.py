@@ -28,31 +28,16 @@ def agregar():
     messagebox.showinfo("Exito","Palabra agregada")
    
 def traducir():
-    palabra=entrada_palabra.get().lower()
-    dic=cargar_diccionario()
+    palabra = entrada_palabra.get().strip(",").lower()
+    dic = cargar_diccionario()
     
-    if num.get()==1:  #español -> ingles
-        resultado=dic.get(palabra, "No encontrada")
-    else:
-        inv_dic={v:k for k,v in dic.items()}
-        resultado=inv_dic.get(palabra,"No encontrada")
+    if num.get() == 1:
+        resultado = dic.get(palabra, "No encontrada")
+    else: 
+        inv_dic = {v: k for k, v in dic.items()}
+        resultado = inv_dic.get(palabra, "No encontrada")
+    
     label_traduccion.config(text=resultado)
-
-
-
-def traducir():
-    palabra=entrada_palabra.get()
-    opcion=num.get()
-    
-    if opcion == 1:
-        try:
-            with open("traductor.txt","r") as archivo:
-                contenido=archivo.read()
-                
-            if palabra in contenido:
-                label_traduccion.config()
-        except:
-            messagebox.showerror("Error","La palabra ha sido agregada")
 
 
 ventana=tk.Tk()
